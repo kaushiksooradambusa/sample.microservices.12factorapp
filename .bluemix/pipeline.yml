@@ -26,7 +26,10 @@ stages:
   - name: Deploy
     type: deployer
     target:
-      application: sample-microservices-12factorapp
+      url: ${CF_TARGET_URL}
+      organization: ${CF_ORGANIZATION}
+      space: ${CF_SPACE}
+      application: ${CF_APP}
     script: |-
       #!/bin/bash
       cf create-service cloudantNoSQLDB Shared CloudantDBFor12Factor
