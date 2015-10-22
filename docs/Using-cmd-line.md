@@ -27,12 +27,16 @@ $ gradle build publishToMavenLocal
 
 ###### [Apache Maven](http://maven.apache.org/) commands
 
-By default, maven will build the sample and run unit tests.
+By default, maven will build the sample, run both unit and functional tests and produced a packaged Liberty server with application inside. It will also download a Liberty install to run the functional tests against.
 
 ```bash
 $ mvn install
 ```
+To run the tests against a local Liberty install specify the wlp-local profile.
 
+```bash
+$ mvn install -Pwlp-local -Dwlp.install.dir=/path/to/installed/wlp
+```
 Running integration tests and producing a fully packaged liberty server that can be run locally or pushed to Bluemix requires a valid installation of liberty to work with.
 
 * [Download WAS Liberty](/docs/Downloading-WAS-Liberty.md) yourself, and specify where the installation is:
@@ -40,17 +44,6 @@ Running integration tests and producing a fully packaged liberty server that can
 ```bash
 $ mvn install -Pwlp-install -Dwlp.install.dir=/path/to/installed/wlp
 ```
-
-* Specify a licensed version of liberty that should be downloaded by the liberty-maven-plugin.
-
-    The current developer license (as you would get from a direct wasdev.net download) can be found at the bottom of the [current license](http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/8.5.5.5/lafiles/runtime/en.html), look for the 'D/N: &lt;license code&gt;'.
-```bash
-$ mvn install -Pwlp-download -Dwlp.license=<license code>
-```
-
-Once a valid install has been located (e.g. when running locally), the install profile information can be omitted on the command line.
-
-Liberty will be downloaded into the target directory by default, which means the profile parameters will be required for the first install after a clean.
 
 In addition to publishing the war to the local maven repository, the built war file is copied into the apps directory of the server configuration located in the 12-factor-wlpcfg directory:
 
@@ -70,7 +63,7 @@ In addition to publishing the war to the local maven repository, the built war f
 ### Running the application locally
 :pushpin: [Switch to Eclipse example](/docs/Using-WDT.md/#running-the-application-locally)
 
-Pre-requisite: If the build hasn't installed Liberty already you need to [Download WAS Liberty](/docs/Downloading-WAS-Liberty.md)
+Pre-requisite: The build should have downloaded a Liberty install, however if you want to use a different version you can [Download WAS Liberty](/docs/Downloading-WAS-Liberty.md)
 Pre-requisite: [Create and configure a Cloudant database](/docs/Creating-Cloudant-database.md). Make sure you have set the system environment variables 'dbUsername', 'dbPassword' and 'dbUrl' then you are ready to run your application.
 
 Use the following to start the server and run the application:
