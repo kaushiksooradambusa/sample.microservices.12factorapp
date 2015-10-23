@@ -3,7 +3,6 @@ stages:
 - name: Build Stage
   inputs:
   - type: git
-    branch: deployToBluemix
   triggers:
   - type: commit
   jobs:
