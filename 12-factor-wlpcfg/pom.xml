@@ -234,24 +234,6 @@
                                 <type>webProfile7</type>
                             </install>
                         </configuration>
-<<<<<<< HEAD
-                        <executions>
-                            <execution>
-                                <id>downloading-wlp</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>server-status</goal>
-                                </goals>
-                                <configuration>
-		                    <assemblyInstallDirectory>${wlp.target.dir}</assemblyInstallDirectory>
-                                    <install>
-                                        <type>webProfile7</type>
-                                    </install>
-                                </configuration>
-                            </execution>
-                        </executions>
-=======
->>>>>>> 1d48a476c9c51c23163023fa8fecc9acf37ef104
                     </plugin>
                 </plugins>
             </build>
