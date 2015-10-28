@@ -32,4 +32,4 @@ stages:
     script: |-
       #!/bin/bash
       cf create-service cloudantNoSQLDB Shared CloudantDBFor12Factor
-      cf push "${CF_APP}" -p 12-factor-application/target/12FactorAppServer.zip -f ./src/main/resources/
+      cf push "${CF_APP}" -p 12-factor-wlpcfg/servers/12FactorAppServer/12FactorAppServer.zip -f ./src/main/resources/
