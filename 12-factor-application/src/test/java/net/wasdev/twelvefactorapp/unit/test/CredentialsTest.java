@@ -14,9 +14,9 @@ public class CredentialsTest {
 
 	@Test
 	public void testStandardParameters() throws Exception {
-			CloudantCredentials cc = new CloudantCredentials("ross", "cheese", "cloudant://myDb", "VCAP_SERVICES");
-			Assert.assertEquals("The username should be ross", "ross", cc.getUsername());
-			Assert.assertEquals("The password should be cheese", "cheese", cc.getPassword());
-			Assert.assertEquals("The url should be cloudant://myDb", "cloudant://myDb", cc.getUrl());
+			CloudantCredentials cc = new CloudantCredentials("dbUser", "dbPassword", "cloudant://dbUrl", "VCAP_SERVICES");
+			Assert.assertEquals("The username should be ross", "dbUser", cc.getUsername());
+			Assert.assertEquals("The password should be cheese", "dbPassword", cc.getPassword());
+			Assert.assertEquals("The url should be cloudant://myDb", "cloudant://dbUrl", cc.getUrl());
 	}
 }

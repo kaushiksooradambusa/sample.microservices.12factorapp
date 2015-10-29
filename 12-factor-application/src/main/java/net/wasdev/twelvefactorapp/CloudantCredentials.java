@@ -8,27 +8,28 @@ import javax.json.JsonObject;
 import javax.json.JsonString;
 
 public class CloudantCredentials {
-	
+
 	private String username;
 	private String password;
 	private String url;
-	
+
 	public CloudantCredentials(String username, String password, String url, String vcapServices) throws Exception {
-		boolean allVariablesFound = false;
-		if (username != null && password!= null && url != null) {
+		if (username != null && password != null && url != null) {
 			this.url = url;
 			this.username = username;
 			this.password = password;
-			allVariablesFound = true;
 		} else {
 			parseVcapServices(vcapServices);
-			if (this.username != null && this.password!= null && this.url != null) {
-				allVariablesFound = true;
+			if (this.username != null && this.password != null && this.url != null) {
+				throw new Exception(
+						"Database cannot be accessed at this time, something is null. Passed in variables were "
+						+ "username=" + username
+						+ ", password=" + ((password == null) ? "null" : "(non-null password)")
+						+ ", url=" + url + ". VCAP_SERVICES values were parsed out as "
+								+ "username=" + this.username
+								+ ", password=" + ((this.password == null) ? "null" : "(non null password)")
+								+ ", url=" + this.url);
 			}
-		}
-		
-		if (!allVariablesFound) {
-			throw new Exception("Database cannot be accessed at this time, something is null.");
 		}
 	}
 
@@ -56,7 +57,5 @@ public class CloudantCredentials {
 	public String getUsername() {
 		return username;
 	}
-	
-	
-	
+
 }
