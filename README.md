@@ -1,5 +1,7 @@
 # Twelve-Factor Applications with Liberty
 
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
+
 A Twelve-Factor application, as defined by [12factor.net](http://www.12factor.net), has characteristics that are ideal for developing individual microservices. To summarize briefly, a twelve-factor application:
 
 1. is stored in a single codebase, tracked in a version control system: one codebase, many deployments. 
