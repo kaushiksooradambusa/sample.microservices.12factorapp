@@ -20,7 +20,7 @@ public class CloudantCredentials {
 			this.password = password;
 		} else {
 			parseVcapServices(vcapServices);
-			if (this.username != null && this.password != null && this.url != null) {
+			if (this.username == null || this.password == null || this.url == null) {
 				throw new Exception(
 						"Database cannot be accessed at this time, something is null. Passed in variables were "
 						+ "username=" + username
