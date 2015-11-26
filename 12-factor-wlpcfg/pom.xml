@@ -110,16 +110,15 @@
                             <directory>servers</directory>
                             <followSymlinks>false</followSymlinks>
                             <includes>
-                                <include>**/logs/*</include>
+                                <include>**/logs/**</include>
                                 <include>**/apps/*</include>
                                 <include>**/dropins/*</include>
-                                <include>**/workarea/*</include>
+                                <include>**/workarea/**</include>
                             </includes>
                         </fileset>
                     </filesets>
                 </configuration>
             </plugin>
-            
             <!-- Enable compile plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -217,7 +216,9 @@
         <profile>
             <id>wlp-download</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>!wlp.install.dir</name>
+                </property>
             </activation>
             <properties>
                 <!-- Default location to download liberty -->
@@ -241,23 +242,26 @@
             </build>
         </profile>
 
-        <!-- Profile to use an existing liberty installation. Activate this 
-            profile (-Pwlp-local) and provide the following property: -Dwlp.install.dir=<value> 
-            Versions are specified here: http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml -->
+        <!-- Profile to use an existing liberty installation. Activate this
+             profile by providing the following property: -Dwlp.install.dir=<value> -->
         <profile>
             <id>wlp-local</id>
+            <activation>
+                <property>
+                    <name>wlp.install.dir</name>
+                </property>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>net.wasdev.wlp.maven.plugins</groupId>
                         <artifactId>liberty-maven-plugin</artifactId>
-                    <configuration>
-                        <installDirectory>${wlp.install.dir}</installDirectory>
-                    </configuration>
+                        <configuration>
+                            <installDirectory>${wlp.install.dir}</installDirectory>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
-
     </profiles>
 </project>
