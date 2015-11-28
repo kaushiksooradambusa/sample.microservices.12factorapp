@@ -46,7 +46,7 @@ task publishWar(dependsOn: 'jar', type: Copy) {
 }
 
 liberty {
-    wlpDir = owner.hasProperty('libertyRoot') ? "${libertyRoot}" : null
+    installDir = owner.hasProperty('libertyRoot') ? "${libertyRoot}" : null
     serverName = '12FactorAppServer'
     userDir = '../12-factor-wlpcfg'
 
