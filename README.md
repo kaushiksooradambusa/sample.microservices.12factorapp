@@ -1,6 +1,4 @@
-# sample.microservices.12factorapp [![Build Status](https://travis-ci.org/WASdev/sample.microservices.12factorapp.svg?branch=master)](https://travis-ci.org/WASdev/sample.microservices.12factorapp)
-
-# Twelve-Factor Applications with Liberty
+# Twelve-Factor Applications with Liberty [![Build Status](https://travis-ci.org/WASdev/sample.microservices.12factorapp.svg?branch=master)](https://travis-ci.org/WASdev/sample.microservices.12factorapp)
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
 
