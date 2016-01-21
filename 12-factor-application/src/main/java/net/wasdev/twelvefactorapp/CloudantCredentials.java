@@ -34,6 +34,9 @@ public class CloudantCredentials {
 	}
 
 	private void parseVcapServices(String vcapServicesEnv) {
+	        if (vcapServicesEnv == null) {
+	            return;
+	        }
 		JsonObject vcapServices = Json.createReader(new StringReader(vcapServicesEnv)).readObject();
 		JsonArray cloudantObjectArray = vcapServices.getJsonArray("cloudantNoSQLDB");
 		JsonObject cloudantObject = cloudantObjectArray.getJsonObject(0);
