@@ -1,4 +1,4 @@
-# sample.microservices.12factorapp [![Build Status](https://travis-ci.org/WASdev/sample.microservices.12factorappsvg?branch=master)](https://travis-ci.org/WASdev/sample.microservices.12factorapp)
+# sample.microservices.12factorapp [![Build Status](https://travis-ci.org/WASdev/sample.microservices.12factorapp.svg?branch=master)](https://travis-ci.org/WASdev/sample.microservices.12factorapp)
 
 # Twelve-Factor Applications with Liberty
 
