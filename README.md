@@ -1,3 +1,5 @@
+# sample.microservices.12factorapp [![Build Status](https://travis-ci.org/WASdev/sample.microservices.12factorappsvg?branch=master)](https://travis-ci.org/WASdev/sample.microservices.12factorapp)
+
 # Twelve-Factor Applications with Liberty
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
@@ -33,7 +35,7 @@ Once the server has been started, go to http://localhost:9082/12-factor-applicat
 
 ## Notice
 
-© Copyright IBM Corporation 2015.
+Â© Copyright IBM Corporation 2015.
 
 ## License
 
