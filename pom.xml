@@ -30,28 +30,13 @@
         <url>git@github.com:WASdev/sample.microservices.12factorapp.git</url>
     </scm>
 
-    <pluginRepositories>
-        <!-- Configure Sonatype OSS Maven snapshots repository (newer maven liberty plugin) -->
-        <pluginRepository>
-        <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>net.wasdev.wlp.maven.plugins</groupId>
                     <artifactId>liberty-maven-plugin</artifactId>
-                    <version>1.1</version>
+                    <version>1.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -61,14 +46,6 @@
             </plugins>
         </pluginManagement>
     </build>
-    
-    <repositories>
-        <repository>
-            <id>was-repo</id>
-            <name>WAS Liberty Maven Repository</name>
-            <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
-        </repository>
-    </repositories>
 
     <modules>
         <module>12-factor-application</module>
