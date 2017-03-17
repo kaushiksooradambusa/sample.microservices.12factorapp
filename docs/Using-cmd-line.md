@@ -16,61 +16,38 @@ This sample can be built using either [Gradle](#gradle-commands) or [Maven](#mav
 
 ###### [Gradle](http://gradle.org/) commands
 
-The build will pull down a copy of Liberty, build the sample and produce a packaged liberty server that can be run locally or pushed up to Bluemix. Before building the sample you must add the License Code to the build.gradle file. You can obtain the license code by reading the [current license](http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/8.5.5.5/lafiles/runtime/en.html) and looking for the 'D/N: <license code>' line.
+The build will pull down a copy of Liberty, build the sample and produce a packaged liberty server that can be run locally or pushed up to Bluemix.
 
 ```bash
 $ gradle build publishToMavenLocal
 ```
 
-:pushpin: Note: To run functional tests and get a packaged server from the build you must [download WAS Liberty](/docs/Downloading-WAS-Liberty.md) and enter the location into the gradle.properties file.
-:pushpin: Note: To get a packaged server without manually downloading Liberty enter the Liberty license code into the gradle.properties file. The license code can be found at the bottom of the [current license](http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/8.5.5.5/lafiles/runtime/en.html), look for the 'D/N: <license code>'. This option does not currently support running the functional tests.
+To run the tests against a local Liberty install, [download WAS Liberty](/docs/Downloading-WAS-Liberty.md) and update the build.gradle file to point to your install. See [ci.gradle](https://github.com/WASdev/ci.gradle#installliberty-task) for more details.
 
 ###### [Apache Maven](http://maven.apache.org/) commands
 
-By default, maven will build the sample, run both unit and functional tests and produced a packaged Liberty server with application inside. It will also download a Liberty install to run the functional tests against.
+By default, maven will build the sample, run both unit and integration tests and produce a packaged Liberty server with application inside. It will also download a Liberty install to run the integration tests against.
 
 ```bash
 $ mvn install
 ```
-To run the tests against a local Liberty install specify the wlp-local profile.
-
-```bash
-$ mvn install -Pwlp-local -Dwlp.install.dir=/path/to/installed/wlp
-```
-Running integration tests and producing a fully packaged liberty server that can be run locally or pushed to Bluemix requires a valid installation of liberty to work with.
-
-* [Download WAS Liberty](/docs/Downloading-WAS-Liberty.md) yourself, and specify where the installation is:
-
-```bash
-$ mvn install -Pwlp-install -Dwlp.install.dir=/path/to/installed/wlp
-```
-
-In addition to publishing the war to the local maven repository, the built war file is copied into the apps directory of the server configuration located in the 12-factor-wlpcfg directory:
-
-```text
-12-factor-wlpcfg
- +- servers
-     +- 12FactorAppServer                      <-- specific server configuration
-        +- server.xml                          <-- server configuration
-        +- apps                                <-- directory for applications
-           +- 12-factor-application.war        <-- sample application
-        +- logs                                <-- created by running the server locally
-        +- workarea                            <-- created by running the server locally
-```
-
-
+To run the tests against a local Liberty install, [download WAS Liberty](/docs/Downloading-WAS-Liberty.md) and update the pom.xml file to point to your install. See [ci.maven](https://github.com/WASdev/ci.maven/blob/master/docs/install-server.md#install-server) for more details.
 
 ### Running the application locally
 :pushpin: [Switch to Eclipse example](/docs/Using-WDT.md/#running-the-application-locally)
 
-Pre-requisite: The build should have downloaded a Liberty install, however if you want to use a different version you can [Download WAS Liberty](/docs/Downloading-WAS-Liberty.md)
 Pre-requisite: [Create and configure a Cloudant database](/docs/Creating-Cloudant-database.md). Make sure you have set the system environment variables 'dbUsername', 'dbPassword' and 'dbUrl' then you are ready to run your application.
 
 Use the following to start the server and run the application:
 
+###### [Gradle](http://gradle.org/) commands
 ```bash
-$ export WLP_USER_DIR=/path/to/sample.microservices.12FactorApp/12-factor-wlpcfg
-$ /path/to/wlp/bin/server run 12FactorAppServer
+$ gradle libertyStart
+```
+
+###### [Apache Maven](http://maven.apache.org/) commands
+```bash
+$ mvn liberty:run-server
 ```
 
 ### Deploying to Bluemix using the command line

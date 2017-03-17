@@ -11,7 +11,7 @@
     <httpEndpoint httpPort="9082" httpsPort="9445"
         id="defaultHttpEndpoint" />
 
-    <webApplication id="12-factor-application" location="12-factor-application.war" name="12-factor-application"/>
+    <webApplication id="12-factor-application" location="12-factor-application-1.0-SNAPSHOT.war" name="12-factor-application"/>
 
     <applicationMonitor updateTrigger="mbean" />
 
