@@ -17,9 +17,10 @@
 
     <applicationMonitor updateTrigger="mbean" />
 
-    <quickStartSecurity userPassword="password"
-        userName="kate"></quickStartSecurity>
-    <keyStore password="liberty"></keyStore>
+    <!-- Before enabling this you should configure your trust store for your Cloudant Service Instance -->
+    <!-- <quickStartSecurity userPassword="password"
+        userName="username"></quickStartSecurity>
+    <keyStore password="liberty"></keyStore>-->
     
     <jndiEntry jndiName="cloudant/url" value="${env.CLOUDANT_URL}"/>
     <jndiEntry jndiName="cloudant/username" value="${env.CLOUDANT_USERNAME}"/>

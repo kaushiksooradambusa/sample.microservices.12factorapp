@@ -28,10 +28,10 @@ public class Cloudant implements Storage {
 
     @Override
     public String getDatabaseFiles(String databaseName) {
-        Database db = client.database(databaseName, false);
-        List<Document> documentList;
+        Database db = client.database(databaseName, true);
+        List<String> documentList;
         try {
-            documentList = db.getAllDocsRequestBuilder().build().getResponse().getDocs();
+            documentList = db.getAllDocsRequestBuilder().build().getResponse().getDocIds();
         } catch (IOException e) {
             return "";
         }
