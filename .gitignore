@@ -7,3 +7,4 @@
 /target
 *.swp
 wlp-install.properties
+/bin/
