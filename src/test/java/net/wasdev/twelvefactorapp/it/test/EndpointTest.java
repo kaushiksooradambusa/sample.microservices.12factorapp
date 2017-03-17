@@ -1,7 +1,6 @@
 package net.wasdev.twelvefactorapp.it.test;
 
 import static org.junit.Assert.*;
-import net.wasdev.twelvefactorapp.ResponseHandler.RequestType;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,12 +40,12 @@ public class EndpointTest {
 	@Before
 	public void setup() {
 		// Database config must be stored in local environment variables
-		databaseConfigured = System.getenv("dbUsername") != null && System.getenv("dbPassword") != null
-				&& System.getenv("dbUrl") != null;
+		databaseConfigured = System.getenv("CLOUDANT_USERNAME") != null && System.getenv("CLOUDANT_PASSWORD") != null
+				&& System.getenv("CLOUDANT_URL") != null;
         String url = contextRoot;
         System.out.println("Creating database");
         Entity<String> ent = Entity.entity(testDatabase, MediaType.APPLICATION_JSON);
-        Response response = sendRequest(url, RequestType.PUT, ent);
+        Response response = sendRequest(url, "PUT", ent);
         System.out.println("Creating database status: " + response.getStatus());
 		response.close();
 	}
@@ -55,7 +54,7 @@ public class EndpointTest {
 	public void cleanUp() {
         String url = contextRoot + testDatabase;
         System.out.println("Deleting database");
-        Response response = sendRequest(url, RequestType.DELETE);
+        Response response = sendRequest(url, "DELETE");
         response.close();
 	}
 	
@@ -64,7 +63,7 @@ public class EndpointTest {
 		Assume.assumeTrue(databaseConfigured);
         String url = contextRoot;
         System.out.println("Testing " + url);
-        Response response = sendRequest(url, RequestType.GET);
+        Response response = sendRequest(url, "GET");
 		String responseString = response.readEntity(String.class);
 		int responseCode = response.getStatus();
 		response.close();
@@ -78,7 +77,7 @@ public class EndpointTest {
 		Assume.assumeTrue(databaseConfigured);
         String url = contextRoot + testDatabase;
         System.out.println("Testing " + url);
-        Response response = sendRequest(url, RequestType.GET);
+        Response response = sendRequest(url, "GET");
 		String responseString = response.readEntity(String.class);
 		int responseCode = response.getStatus();
 		response.close();
@@ -95,7 +94,7 @@ public class EndpointTest {
         JsonObject data = Json.createObjectBuilder().add("weather", "sunny").build();
         String dataString = data.toString();
         Entity<String> ent = Entity.entity(dataString, MediaType.APPLICATION_JSON);
-        Response response = sendRequest(url, RequestType.POST, ent);
+        Response response = sendRequest(url, "POST", ent);
 		String responseString = response.readEntity(String.class);
 		int responseCode = response.getStatus();
 		response.close();
@@ -110,7 +109,7 @@ public class EndpointTest {
 		Assume.assumeFalse(databaseConfigured);
         String url = contextRoot;
         System.out.println("Testing " + url);
-        Response response = sendRequest(url, RequestType.GET);
+        Response response = sendRequest(url, "GET");
 		String responseString = response.readEntity(String.class);
 		int responseCode = response.getStatus();
 		response.close();
@@ -120,16 +119,16 @@ public class EndpointTest {
         assertTrue("Application returned error: " + responseString, responseString.contains("{\"Exception\":\"Database cannot be accessed at this time"));
 	}
 	
-	public Response sendRequest(String url, RequestType requestType) {
+	public Response sendRequest(String url, String requestType) {
 		return sendRequest(url, requestType, null);
 	}
 	
-	public Response sendRequest(String url, RequestType requestType, Entity<?> ent) {
+	public Response sendRequest(String url, String requestType, Entity<?> ent) {
 		Client client = ClientBuilder.newClient();
 		System.out.println("Testing " + url);
 		WebTarget target = client.target(url);
 		Invocation.Builder invoBuild  = target.request();
-		Response response = invoBuild.build(requestType.toString(), ent).invoke();
+		Response response = invoBuild.build(requestType, ent).invoke();
 		return response;
 	}
 
