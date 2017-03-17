@@ -39,7 +39,7 @@ This assumes you have the Gradle [Buildship](https://projects.eclipse.org/projec
 4. In the *Project root directory* folder textbox, Paste in the repository directory.
 5. Click *Next* twice
 6. One project should be listed in the *Gradle project structure* click *Finish*
-7. This will create a projects in Eclipse called net.wasdev.wlp.sample.12-factor-application
+7. This will create a project in Eclipse called net.wasdev.wlp.sample.12-factor-application
 8. Go to the *Gradle Tasks* view in Eclipse and navigate to the *net.wasdev.wlp.sample.12-factor-application* project
 9. Double click on the *eclipse* task to generate all the Eclipse files
 10. In the *Enterprise Explorer* view in Eclipse right click on your project and click refresh
@@ -61,7 +61,7 @@ This assumes you have the Gradle [Buildship](https://projects.eclipse.org/projec
 2. Right-click on this folder, and select *Copy path to Clipboard*
 3. Select menu *File -> Import -> Maven -> Existing Maven Projects*
 4. In the Root Directory textbox, Paste in the repository directory
-5. Select *Browse..." button and select *Finish* (confirm it a pom.xml file)
+5. Select *Browse..." button and select *Finish* (confirm it finds a pom.xml file)
 6. This will create a project in Eclipse called net.wasdev.wlp.sample.12-factor-application
 
 :star: *Note:* If you did not use Eclipse/WDT to clone the git repository, follow from step 3, but navigate to the cloned repository directory rather than pasting its name.
