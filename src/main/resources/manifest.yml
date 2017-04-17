@@ -1,2 +1,7 @@
 services:
   - CloudantDBFor12Factor
+  ---
+env:
+   dbUsername: 3aead73a-3edf-4e48-b0d0-6f6885746ef6-bluemix
+   dbPassword: ae74112df0cd7b40ed24366225b4eb6dc774ec06d5cbdd1685e40353cda385cc
+   dbUrl: https://3aead73a-3edf-4e48-b0d0-6f6885746ef6-bluemix:ae74112df0cd7b40ed24366225b4eb6dc774ec06d5cbdd1685e40353cda385cc@3aead73a-3edf-4e48-b0d0-6f6885746ef6-bluemix.cloudant.com
