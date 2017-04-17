@@ -1,0 +1,72 @@
+********************************************************************************
+product = WebSphere Application Server 16.0.0.4 (wlp-1.0.15.cl160420161113-0206)
+wlp.install.dir = C:/workshop/workspace/sample.microservices.12factorapp/target/liberty/wlp/
+java.home = C:\Program Files\Java\jdk1.8.0_121\jre
+java.version = 1.8.0_121
+java.runtime = Java(TM) SE Runtime Environment (1.8.0_121-b13)
+os = Windows 7 (6.1; amd64) (en_US)
+process = 796@C171L0044320846
+********************************************************************************
+[4/13/17 11:27:09:336 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[4/13/17 11:27:09:352 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/16.0.0.4/lafiles/en.html
+[4/13/17 11:27:10:842 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.731 seconds
+[4/13/17 11:27:10:952 EDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[4/13/17 11:27:12:688 EDT] 00000012 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[4/13/17 11:27:13:183 EDT] 00000012 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications. 
+[4/13/17 11:27:13:284 EDT] 00000020 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host 127.0.0.1  (IPv4: 127.0.0.1) port 9082.
+[4/13/17 11:27:13:827 EDT] 00000012 com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[4/13/17 11:27:13:827 EDT] 00000012 com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[4/13/17 11:27:13:827 EDT] 00000012 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[4/13/17 11:27:14:300 EDT] 00000014 com.ibm.ws.ssl.config.WSKeyStore                             I CWPKI0802I: Creating the SSL certificate. This may take a few seconds.
+[4/13/17 11:27:14:332 EDT] 0000001e com.ibm.ws.security.token.ltpa.internal.LTPAKeyInfoManager   I CWWKS4103I: Creating the LTPA keys. This may take a few seconds.
+[4/13/17 11:27:14:363 EDT] 00000012 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been activated. 
+[4/13/17 11:27:15:719 EDT] 00000021 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application 12-factor-application.
+[4/13/17 11:27:15:829 EDT] 0000001e com.ibm.ws.security.token.ltpa.internal.LTPAKeyInfoManager   A CWWKS4104A: LTPA keys created in 1.497 seconds. LTPA key file: C:/workshop/workspace/sample.microservices.12factorapp/target/liberty/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[4/13/17 11:27:15:860 EDT] 0000001e com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0008I: The security service is ready.
+[4/13/17 11:27:15:860 EDT] 0000001e com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 1.532 seconds.
+[4/13/17 11:27:16:389 EDT] 0000001c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: ibm/api.
+[4/13/17 11:27:16:389 EDT] 0000001c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module ibm/api has been bound to default_host.
+[4/13/17 11:27:16:389 EDT] 0000001c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9082/ibm/api/
+[4/13/17 11:27:16:404 EDT] 0000001d com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: IBMJMXConnectorREST.
+[4/13/17 11:27:16:404 EDT] 0000001d com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module IBMJMXConnectorREST has been bound to default_host.
+[4/13/17 11:27:16:404 EDT] 0000001d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9082/IBMJMXConnectorREST/
+[4/13/17 11:27:16:799 EDT] 00000021 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[4/13/17 11:27:16:799 EDT] 00000021 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: 12 Factor App.
+[4/13/17 11:27:16:799 EDT] 00000021 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module 12 Factor App has been bound to default_host.
+[4/13/17 11:27:16:799 EDT] 00000021 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9082/12-factor-application/
+[4/13/17 11:27:16:799 EDT] 00000021 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application 12-factor-application started in 1.096 seconds.
+[4/13/17 11:27:16:846 EDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [servlet-3.1, ssl-1.0, monitor-1.0, jndi-1.0, json-1.0, distributedMap-1.0, jsonp-1.0, appSecurity-2.0, jaxrs-2.0, restConnector-1.0, jaxrsClient-2.0].
+[4/13/17 11:27:16:846 EDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 6.020 seconds.
+[4/13/17 11:27:16:846 EDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[4/13/17 11:27:17:497 EDT] 00000029 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at C:\workshop\workspace\sample.microservices.12factorapp\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[4/13/17 11:27:17:734 EDT] 00000014 com.ibm.ws.ssl.config.WSKeyStore                             A CWPKI0803A: SSL certificate created in 3.434 seconds. SSL key file: C:/workshop/workspace/sample.microservices.12factorapp/target/liberty/wlp/usr/servers/defaultServer/resources/security/key.jks
+[4/13/17 11:27:17:780 EDT] 00000020 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host 127.0.0.1  (IPv4: 127.0.0.1) port 9445.
+[4/13/17 11:27:17:796 EDT] 00000020 com.ibm.ws.jmx.connector.server.rest.RESTAppListener         I CWWKX0103I: The JMX REST connector is running and is available at the following service URL: service:jmx:rest://localhost:9445/IBMJMXConnectorREST
+[4/13/17 11:27:17:796 EDT] 00000020 com.ibm.ws.jmx.connector.server.rest.RESTAppListener         I CWWKX0103I: The JMX REST connector is running and is available at the following service URL: service:jmx:rest://localhost:9445/IBMJMXConnectorREST
+[4/13/17 11:27:19:237 EDT] 0000001e com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/12-factor-application
+[4/13/17 11:27:19:297 EDT] 0000001e com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[4/13/17 11:27:19:390 EDT] 0000001e com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[4/13/17 11:27:19:695 EDT] 0000001e m.ibm.ws.jaxrs.2.0.common:1.0.15.cl160420161113-0206(id=82)] I Setting the server's publish address to be /
+[4/13/17 11:27:19:998 EDT] 0000001e com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [12-factor-application] [/12-factor-application] [net.wasdev.twelvefactorapp.JaxrsApplication]: Initialization successful.
+[4/13/17 11:27:20:060 EDT] 0000001e SystemOut                                                    O Creating database called testing
+[4/13/17 11:27:20:154 EDT] 00000021 SystemOut                                                    O Deleting database called testing
+[4/13/17 11:27:20:232 EDT] 00000025 SystemOut                                                    O Creating database called testing
+[4/13/17 11:27:20:235 EDT] 00000029 SystemOut                                                    O Deleting database called testing
+[4/13/17 11:27:20:255 EDT] 0000001a SystemOut                                                    O Creating database called testing
+[4/13/17 11:27:20:286 EDT] 0000001c SystemOut                                                    O Deleting database called testing
+[4/13/17 11:27:20:302 EDT] 00000020 SystemOut                                                    O Creating database called testing
+[4/13/17 11:27:20:318 EDT] 00000028 SystemOut                                                    O Getting all databases
+[4/13/17 11:27:20:349 EDT] 00000019 SystemOut                                                    O Deleting database called testing
+[4/13/17 11:27:20:742 EDT] 0000000f com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Thursday, April 13, 2017 at 11:27 AM. The server defaultServer is shutting down.
+[4/13/17 11:27:20:744 EDT] 0000002c com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[4/13/17 11:27:20:744 EDT] 0000002d com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint-ssl has stopped listening for requests on host 127.0.0.1  (IPv4: 127.0.0.1) port 9445.
+[4/13/17 11:27:20:749 EDT] 0000002d com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host 127.0.0.1  (IPv4: 127.0.0.1) port 9082.
+[4/13/17 11:27:20:749 EDT] 0000002d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9082/12-factor-application/
+[4/13/17 11:27:20:749 EDT] 0000002d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9082/ibm/api/
+[4/13/17 11:27:20:749 EDT] 0000002d com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9082/IBMJMXConnectorREST/
+[4/13/17 11:27:20:780 EDT] 0000002c com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[4/13/17 11:27:20:812 EDT] 00000020 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [12-factor-application] [/12-factor-application] [net.wasdev.twelvefactorapp.JaxrsApplication]: Destroy successful.
+[4/13/17 11:27:20:827 EDT] 00000020 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application 12-factor-application has stopped successfully.
+[4/13/17 11:27:21:061 EDT] 0000002c com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: The security service has stopped.
+[4/13/17 11:27:21:077 EDT] 0000002c ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been deactivated. 
+[4/13/17 11:27:21:429 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 12.333 seconds.

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.wasdev.twelvefactorapp.it.test.EndpointTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 1.849 sec - in net.wasdev.twelvefactorapp.it.test.EndpointTest

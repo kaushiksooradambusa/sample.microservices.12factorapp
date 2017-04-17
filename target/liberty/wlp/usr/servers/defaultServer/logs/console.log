@@ -1,0 +1,29 @@
+Launching defaultServer (WebSphere Application Server 16.0.0.4/wlp-1.0.15.cl160420161113-0206) on Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_121-b13 (en_US)
+[AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+[AUDIT   ] CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/16.0.0.4/lafiles/en.html
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications. 
+[AUDIT   ] CWWKS4104A: LTPA keys created in 1.497 seconds. LTPA key file: C:/workshop/workspace/sample.microservices.12factorapp/target/liberty/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9082/ibm/api/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9082/IBMJMXConnectorREST/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9082/12-factor-application/
+[AUDIT   ] CWWKZ0001I: Application 12-factor-application started in 1.096 seconds.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [servlet-3.1, ssl-1.0, monitor-1.0, jndi-1.0, json-1.0, distributedMap-1.0, jsonp-1.0, appSecurity-2.0, jaxrs-2.0, restConnector-1.0, jaxrsClient-2.0].
+[AUDIT   ] CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[AUDIT   ] CWPKI0803A: SSL certificate created in 3.434 seconds. SSL key file: C:/workshop/workspace/sample.microservices.12factorapp/target/liberty/wlp/usr/servers/defaultServer/resources/security/key.jks
+Creating database called testing
+Deleting database called testing
+Creating database called testing
+Deleting database called testing
+Creating database called testing
+Deleting database called testing
+Creating database called testing
+Getting all databases
+Deleting database called testing
+[AUDIT   ] CWWKE0055I: Server shutdown requested on Thursday, April 13, 2017 at 11:27 AM. The server defaultServer is shutting down.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9082/12-factor-application/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9082/ibm/api/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9082/IBMJMXConnectorREST/
+[AUDIT   ] CWWKZ0009I: The application 12-factor-application has stopped successfully.
+[AUDIT   ] CWWKE0036I: The server defaultServer stopped after 12.333 seconds.
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0

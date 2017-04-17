@@ -1,0 +1,8 @@
+net\wasdev\twelvefactorapp\myObject.class
+net\wasdev\twelvefactorapp\TestServlet.class
+net\wasdev\twelvefactorapp\CloudantCredentials.class
+net\wasdev\twelvefactorapp\AdminServlet.class
+net\wasdev\twelvefactorapp\JaxrsHttpReceiver.class
+net\wasdev\twelvefactorapp\ResponseHandler$RequestType.class
+net\wasdev\twelvefactorapp\JaxrsApplication.class
+net\wasdev\twelvefactorapp\ResponseHandler.class
